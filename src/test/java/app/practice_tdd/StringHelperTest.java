@@ -1,5 +1,6 @@
 package app.practice_tdd;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,7 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StringHelperTest {
 
-    StringHelper stringHelper = new StringHelper();
+    StringHelper stringHelper;
+
+    @BeforeEach
+    public void beforeEach() {
+        stringHelper = new StringHelper();
+        System.out.println("test eachBefore Annotation");
+    }
 
     @Test
     public void truncateAInFirst2Positions_AinFirst2Positions_Test() {
